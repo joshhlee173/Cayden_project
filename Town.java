@@ -1,8 +1,8 @@
-import NPC;
 public class Town {
     String TownName;
     int population;
     NPC[] inhabitants = new NPC[population];
+    // lets also include the different buildings and places that would be included here
 
     public Town(String name, int pop){
         this.TownName = name;

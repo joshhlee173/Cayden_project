@@ -59,6 +59,12 @@ public class NPC {
         // In this function, what I would like to happen is that given a String prompt, 
         // the NPC character responds, depending on the role and tier. ideally, *hint* 
         // there is a way to look up a question from within a specific dude's memory
+        String response = this.knowledgeBase.get(question);
+        if (response == null){
+            return "Sorry, I don't know.";
+        }
+        return response;
+        
     }
     public NPCRole getRole() {
         return this.role;

@@ -60,7 +60,7 @@ public class MainCharacter {
     */
 
    public void talk(NPC person, String question) {
-        System.out.println(characterName + " asks " + person.getName() + ": " + question);
+        System.out.println(this.name() + " asks " + person.getName() + ": " + question);
         // Try to think about how we are going to be able to get a response from the NPC???
         System.out.println(person.getName() + " says: " + response);
         // Does anything need to be done with this response?
@@ -68,11 +68,14 @@ public class MainCharacter {
 
     public void addItem(Item item) {
         // what should happen to the inventory given that this item is something we want to the inventory?
-        return
+        
     }
 
     public void showInventory() {
         // similar to most of the gets, but look into what should be done here, since the inventory is defined as a dictionary
+        for(int i : this.inventory){
+            System.out.println(i);
+        }
     }
 
     public void remember(String key, String value) {

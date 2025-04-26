@@ -2,9 +2,12 @@
 // this would make sure that we can categorize all the NPC's, think this might be a better implementation than the subclasses
 public enum NPCRole {
     MERCHANT,
-    GUARD,
+    SOLDIER,
     VILLAGER,
-    GUIDE
+    GUIDE,
+    FARMER,
+    CRAFTSMEN,
+    SERVANT
 }
 
 public enum NPCClass {

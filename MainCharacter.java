@@ -23,6 +23,8 @@ public class MainCharacter {
 
     private Town town;
 
+    private double money;
+
     public MainCharacter(String characterName, String address, boolean isProtagonist, boolean isMajorCharacter, Town town){
         this.characterName = characterName;
         this.address = address;
@@ -30,11 +32,11 @@ public class MainCharacter {
         this.isMajorCharacter = isMajorCharacter;
 
         this.inventory = new ArrayList<>();
-        this.friends = new ArrayList<>();
+        this.servants = new ArrayList<>();
         this.enemies = new ArrayList<>();
         this.memory = new HashMap<>(); // Would be best to be able to use this sort of structure, but look into what a hashmap is. 
         // set this to be something that is ur choice.
-        this.goal = "nothing";
+        this.goal = "Win the war";
 
         this.town = town;
 
@@ -51,6 +53,13 @@ public class MainCharacter {
     }
     public String getAddress(){
         return this.Address;
+    }
+    public String getMoney(){
+        return this.money;
+    }
+    public int spendMoney(int cost){
+        this.money -=cost;
+        return this.money;
     }
 
     /*

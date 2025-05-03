@@ -7,7 +7,7 @@ public enum NPCRole {
     GUIDE,
     FARMER,
     CRAFTSMEN,
-    SERVANT
+    SERVANT,
 }
 
 public enum NPCClass {

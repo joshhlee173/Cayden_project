@@ -9,7 +9,7 @@ public class Town {
     NPC[] merchants = new NPC[0];
 
     Map <String, Integer> defenses = new HashMap<>();
-    Map <String, String> stores = new Hashmap<>();
+    Map <String, String> stores = new HashMap<>();
     // lets also include the different buildings and places that would be included here
 
     public Town(String name, int pop){
@@ -22,7 +22,7 @@ public class Town {
 
         defenses.put("", 1);
 
-        soldiers[0] = new NPC("John", "500 Militia ave.")
+        soldiers[0] = new NPC("John", "500 Militia ave.");
 
         for(int i = 0; i <this.population; i++){
             this.inhabitants[i] = new NPC(names[i], address[i]);

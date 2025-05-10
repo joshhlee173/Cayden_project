@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MainCharacter {
     String CharacterName;
     String Address;
@@ -14,11 +16,9 @@ public class MainCharacter {
     private boolean isProtagonist;
     private boolean isMajorCharacter;
 
-    private List<Item> inventory;
     private List<NPC> friends;
     private List<NPC> enemies;
 
-    private Map<String, String> memory; // This is a dictionary that maps String to String
     private String goal;
 
     private Town town;
@@ -26,26 +26,23 @@ public class MainCharacter {
     private double money;
 
     public MainCharacter(String characterName, String address, boolean isProtagonist, boolean isMajorCharacter, Town town){
-        this.characterName = characterName;
-        this.address = address;
+        this.CharacterName = characterName;
+        this.Address = address;
         this.isProtagonist = isProtagonist;
         this.isMajorCharacter = isMajorCharacter;
 
-        this.inventory = new ArrayList<>();
-        this.servants = new ArrayList<>();
-        this.enemies = new ArrayList<>();
-        this.memory = new HashMap<>(); // Would be best to be able to use this sort of structure, but look into what a hashmap is. 
         // set this to be something that is ur choice.
         this.goal = "Win the war";
 
         this.town = town;
 
         // Optional: find neighbors immediately
-        List<NPC> neighbors = town.getNeighbors(address);
+    //     List<NPC> neighbors = town.getNeighbors(address);
         System.out.println("Neighbors of " + characterName + ":");
-        for (NPC n : neighbors) {
+    /*    for (NPC n : neighbors) {
             System.out.println(" - " + n.getName());
         }
+            */
     }
 
     public String getName(){
@@ -54,12 +51,16 @@ public class MainCharacter {
     public String getAddress(){
         return this.Address;
     }
-    public String getMoney(){
+    public double getMoney(){
         return this.money;
     }
-    public int spendMoney(int cost){
+    public double spendMoney(int cost){
         this.money -=cost;
         return this.money;
+    }
+
+    public void build(){
+        System.out.println("You have built a building");
     }
 
     /*
@@ -69,18 +70,18 @@ public class MainCharacter {
     */
 
    public void talk(NPC person, String question) {
-        System.out.println(this.name() + " asks " + person.getName() + ": " + question);
+        System.out.println(this.CharacterName + " asks " + person.getName() + ": " + question);
         // Try to think about how we are going to be able to get a response from the NPC???
-        System.out.println(person.getName() + " says: " + response);
+        //System.out.println(person.getName() + " says: " + response);
         // Does anything need to be done with this response?
     }
 
-    public void addItem(Item item) {
+    //public void addItem(Item item) {
         // what should happen to the inventory given that this item is something we want to the inventory?
         
-    }
+    //}
 
-    public void showInventory() {
+    /*public void showInventory() {
         // similar to most of the gets, but look into what should be done here, since the inventory is defined as a dictionary
         for(int i : this.inventory){
             System.out.println(i);
@@ -94,10 +95,10 @@ public class MainCharacter {
     public String recall(String key) {
         // trying to get the memory out of the person, given that we started with the key?
     }
-
+*/
     public static void main(String[] args){
-        MainCharacter Cayden = new MainCharacter("Cayden", "12345 Main Street");
-        System.out.println(Cayden.getName());
-        System.out.println(Cayden.getAddress());
+        //MainCharacter Cayden = new MainCharacter("Cayden", "12345 Main Street", true, true, Springfield);
+        //System.out.println(Cayden.getName());
+        //System.out.println(Cayden.getAddress());
     }
 }

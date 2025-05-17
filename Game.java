@@ -1,4 +1,5 @@
 import java.util.*;
+import java.time.Instant;
 
 public class Game {
     private Town town;
@@ -64,7 +65,10 @@ public class Game {
 
     private void build_something(){
         System.out.println("What would you like to build?");
-        this.player.build();
+        while(true){
+            String input = scanner.nextLine().trim();
+            this.player.build(input);
+        }
     }
 
     private void travel_somewhere(){

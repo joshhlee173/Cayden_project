@@ -59,8 +59,11 @@ public class MainCharacter {
         return this.money;
     }
 
-    public void build(){
-        System.out.println("You have built a building");
+    public void build(String buildingType){
+        switch(buildingType){
+            case "house":
+                
+        }
     }
 
     /*
